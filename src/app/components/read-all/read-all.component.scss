@@ -1,0 +1,78 @@
+:root {
+  --primary-color: #333333; /* Cinza escuro para o fundo */
+  --secondary-color: #ffffff; /* Branco para o texto */
+  --accent-color: #f5a623; /* Cor de destaque (alaranjado metálico) */
+  --card-bg-color: #212121; /* Fundo escuro para os cards */
+  --badge-color: #0cf100; /* Verde para indicar status ativo */
+  --hover-color: #1e1e1e; /* Cor de hover mais escura */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: var(--hover-color);
+}
+
+.container,
+.conteudo,
+.novo {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.novo {
+  margin-top: 2rem;
+}
+
+.acoes {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+mat-card,
+mat-card-subtitle {
+  color: var(--secondary-color);
+}
+
+.badge {
+  margin-top: 0.2rem;
+  margin-bottom: 0.1px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cartao {
+  width: min-content;
+}
+
+.ativos {
+  background-color: var(--badge-color);
+  color: #1f30ea; /* Azul metálico */
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.ativos:hover {
+  background-color: #0db800; /* Efeito hover mais intenso */
+}

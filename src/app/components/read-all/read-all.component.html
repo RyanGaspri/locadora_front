@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="badge">
+    <button (click)="verInativos()" mat-raised-button color="warn" matBadge="{{ inativo }}">Veiculos Baixados
+    </button>
+  </div>
+
+  <button (click)="verCadastro()" class="novo" mat-elevation-z5 mat-raised-button color="primary">
+    Novo
+  </button>
+
+  <div class="conteudo" *ngFor="let item of list">
+    <mat-card class="card mat-elevation-z3 ">
+      <mat-card-header class="cartao">
+        <mat-card-title>{{item.nome}}</mat-card-title>
+        <mat-card-subtitle>{{item.dataCadastro}}</mat-card-subtitle>
+        <mat-card-subtitle>{{item.ativo}}</mat-card-subtitle>        
+      </mat-card-header>
+
+      <div class="acoes">
+        <button mat-mini-fab (click)="inativar(item)" color="primary" id="gravar">
+          <mat-icon>V</mat-icon>
+        </button>
+        <button routerLink="atualizar/{{ item.ra }}" mat-mini-fab color="accent" id="editar">
+          <mat-icon>e</mat-icon>
+        </button>
+
+        <button mat-mini-fab (click)="apagar(item.ra)" color="warn" id="apagar">
+          <mat-icon>X</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

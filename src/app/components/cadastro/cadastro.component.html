@@ -1,0 +1,40 @@
+<!-- Cadastro de alunos -->
+<form>
+    <h1>Cadastro de veiculos</h1>
+    <div class="dados">
+        <mat-form-field class="nomeAluno">
+            <mat-label>Nome Ou Modelo</mat-label>
+            <input matInput size="60" [(ngModel)]="aluno.nome" 
+            name="aluno.nome"  placeholder="Ex. Marcos Monteiro">
+        </mat-form-field>
+        <p>
+            <mat-form-field class="situacao">
+                <mat-label>Status do Veiculo</mat-label>
+                <select matNativeControl required [(ngModel)]="aluno.ativo"
+                name="aluno.ativo">
+                    <option [value]="true">Ativo</option>
+                    <option [value]="false">Baixado</option>
+                </select>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="dataCadastro" appearance="fill">
+                <mat-label>Data de Cadastro</mat-label>
+                <input [(ngModel)]="aluno.dataCadastro" name="aluno.dataCadastro"
+                matInput [matDatepicker]="dp3" />
+
+                <mat-datepicker-toggle matSuffix [for]="dp3">
+                </mat-datepicker-toggle>
+                <mat-datepicker #dp3></mat-datepicker>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="botoes">
+        <button (click)="cadastrar()" mat-raised-button color="primary"
+        name="botaoCadastrar">
+            Cadastrar </button>
+        <button (click)="cancelar()" mat-raised-button color="warn"
+        name="botaoCancelar">
+            Cancelar </button>            
+    </div>
+</form>
